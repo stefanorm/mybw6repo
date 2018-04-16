@@ -1,0 +1,11 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [{
+        "location": "Service Descriptors/test_application.module.rmBar_RestInterface-getscore.json",
+        "type": "generated"
+    }]
+}

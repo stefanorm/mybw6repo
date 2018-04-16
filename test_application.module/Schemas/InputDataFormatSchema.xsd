@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat/97234eb9-b4aa-4ae0-9369-a6c29063b902" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.tibco.com/bw/palette/dataformat/97234eb9-b4aa-4ae0-9369-a6c29063b902">
+  <xsd:element name="root" tibex:source="sr.index.dataFormatResource" >
+ 
+     <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="question" type="xsd:string"  />
+        <xsd:element name="date" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+ 
+  </xsd:element>
+</xsd:schema>

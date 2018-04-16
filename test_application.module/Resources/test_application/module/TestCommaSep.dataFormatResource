@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:_97234eb9-b4aa-4ae0-9369-a6c29063b902="http://ns.tibco.com/bw/palette/dataformat/97234eb9-b4aa-4ae0-9369-a6c29063b902" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_kttNET73EeiFnsJGLKb-Qw" name="test_application.module.TestCommaSep" type="dataformat:DataFormat">
+  <imports xmi:id="_DgEHAD74EeiFnsJGLKb-Qw" importType="http://www.w3.org/2001/XMLSchema" namespace="http://ns.tibco.com/bw/palette/dataformat/97234eb9-b4aa-4ae0-9369-a6c29063b902"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_ktysoD73EeiFnsJGLKb-Qw" formatType="Delimiter separated" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="_97234eb9-b4aa-4ae0-9369-a6c29063b902:root" fieldOffsetsStr="question(0,0)&#xA;date(0,0)">
+    <fieldOffsets xmi:id="_DgeWsD74EeiFnsJGLKb-Qw" name="question"/>
+    <fieldOffsets xmi:id="_DgeWsT74EeiFnsJGLKb-Qw" name="date"/>
+  </jndi:configuration>
+</jndi:namedResource>

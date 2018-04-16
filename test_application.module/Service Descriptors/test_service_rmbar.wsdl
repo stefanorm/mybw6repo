@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--Created by TIBCO WSDL --><wsdl:definitions xmlns:ns1="http://test.project/test_rmbar/Schema" xmlns:part="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://test.project/test_rmbar/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="test_service_rmbar" targetNamespace="http://test.project/test_rmbar/wsdl">
+	<wsdl:types>
+	<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="http://test.project/test_rmbar/Schema" schemaLocation="../Schemas/test_rmbar.xsd"/>
+	</schema>
+	
+	</wsdl:types>
+		
+	<wsdl:message name="serviceInput">
+		<wsdl:part element="ns1:serviceInput" name="Input"/>
+	</wsdl:message>
+
+	<wsdl:message name="serviceOutput">
+		<wsdl:part element="ns1:serviceResponse" name="Output"/>
+    </wsdl:message>
+
+	<wsdl:message name="faultMessage">
+		<wsdl:part element="ns1:faultMessage" name="faultMessage"/>
+	</wsdl:message>
+
+
+	<wsdl:portType name="rmbar_service">
+		<wsdl:operation name="rmbar_operation">
+			<wsdl:input message="tns:serviceInput"/>
+			<wsdl:output message="tns:serviceOutput"/>
+			<wsdl:fault message="tns:faultMessage" name="faultMessage"/>
+	
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

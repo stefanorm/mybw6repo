@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/schema/1523543225253" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://www.example.org/schema/1523543225253">
+
+  <element name="faultMessage" type="tns:faultMessageType"/>
+
+  <element name="invoke_rmbarRequest">
+    <complexType>
+      <sequence>
+        <element name="in" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="invoke_rmbarResponse">
+    <complexType>
+      <sequence>
+        <element name="out" type="string"/>
+        <element name="statusCode" type="int"/>
+      </sequence>
+    </complexType>
+  </element>
+
+	<complexType name="faultMessageType">
+		<sequence>
+			<element name="errorCode" type="string" />
+			<element name="errorMessage" type="string" />
+		</sequence>
+	</complexType>
+    
+         
+</schema>

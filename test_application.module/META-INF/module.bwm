@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:Schema="http://test.project/test_rmbar/Schema" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:schema_1523543225253="http://www.example.org/schema/1523543225253" xmlns:wsdl="http://test.project/test_rmbar/wsdl" xmlns:wsdl_1523543225210="http://www.example.org/wsdl/1523543225210" xmi:id="_htBSID1pEeiS688_lKsDdQ" targetNamespace="http://tns.tibco.com/bw/composite/test_application.module" name="test_application.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_depKMD2KEeiS688_lKsDdQ" name="rmbar_service" promote="ComponentProcess/rmbar_service">
+    <sca:interface.wsdl xmi:id="_de9TQD2KEeiS688_lKsDdQ" interface="http://test.project/test_rmbar/wsdl#wsdl.interface(rmbar_service)" scaext:wsdlLocation="../Service%20Descriptors/test_service_rmbar.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_HqX2gD2TEeiS688_lKsDdQ" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/d6af6decffb8463fa18d56851a357957/SOAPServiceBinding" portTypeQName="wsdl:rmbar_service" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/test_application.module/Service%20Descriptors/test_service_rmbar.wsdl">
+      <bindingType xmi:id="_Hqi1oD2TEeiS688_lKsDdQ"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_J3qNcD2TEeiS688_lKsDdQ" endpointURI="/SOAPServiceBinding/rmbar_service/" httpConnector="test_application.module.HTTPConnectorResource_Test"/>
+      <operationConfiguration xmi:id="_Hql48D2TEeiS688_lKsDdQ" operationName="rmbar_operation" action="rmbar_operation" actionNeeded="true">
+        <bindingType xmi:id="_Hql48T2TEeiS688_lKsDdQ"/>
+        <messageConfiguration xmi:id="_Hql48j2TEeiS688_lKsDdQ" messageQName="wsdl:serviceInput" wsdlLocation="platform:/resource/test_application.module/Service%20Descriptors/test_service_rmbar.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_Hql48z2TEeiS688_lKsDdQ" partName="Input" partElementName="Schema:serviceInput"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_Hql49D2TEeiS688_lKsDdQ" messageQName="wsdl:serviceOutput" messageDirection="OUTPUT" wsdlLocation="platform:/resource/test_application.module/Service%20Descriptors/test_service_rmbar.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_Hql49T2TEeiS688_lKsDdQ" partName="Output" partElementName="Schema:serviceResponse"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_Hql49j2TEeiS688_lKsDdQ" messageQName="wsdl:faultMessage" messageDirection="FAULT" action="faultMessage" wsdlLocation="platform:/resource/test_application.module/Service%20Descriptors/test_service_rmbar.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_Hql49z2TEeiS688_lKsDdQ" partName="faultMessage" partElementName="Schema:faultMessage"/>
+        </messageConfiguration>
+        <context xmi:id="_HqmgAD2TEeiS688_lKsDdQ">
+          <inputMapping xmi:id="_HqnuID2TEeiS688_lKsDdQ"/>
+          <outputMapping xmi:id="_HqnuIT2TEeiS688_lKsDdQ" direction="OUTPUT"/>
+          <faultMappings xmi:id="_HqoVMD2TEeiS688_lKsDdQ" direction="FAULT" faultName="faultMessage"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_HqoVMT2TEeiS688_lKsDdQ" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:service xmi:id="_Ds1zQD4-EeiEq7jIJfFQPA" name="getscore" promote="ComponentrmBar_RestInterface/getscore">
+    <sca:interface.wsdl xmi:id="_Ds7S0D4-EeiEq7jIJfFQPA" interface="http://xmlns.example.com/20180412123247PLT#wsdl.interface(getscore)"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_DtBZcD4-EeiEq7jIJfFQPA" name="RestService" path="/getscore" docBasePath="http://localhost:7777/test_application.module" docResourcePath="getscore" basePath="/" connector="test_application.module.invokerHttpConnector" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/test_application.module.rmBar_RestInterface-getscore.json">
+      <operation xmi:id="_DtGR8D4-EeiEq7jIJfFQPA" operationName="get" nickname="getScore" httpMethod="GET" responseStyle="element">
+        <parameters xmi:id="_RCrzAD4-EeiEq7jIJfFQPA">
+          <parameterMapping xmi:id="_RCrzAT4-EeiEq7jIJfFQPA" parameterName="question" parameterType="Query" dataType="string" required="true"/>
+          <parameterMapping xmi:id="_TiJfED4-EeiEq7jIJfFQPA" parameterName="date" parameterType="Query" dataType="string#date" required="true"/>
+        </parameters>
+        <responseStatus xmi:id="_cgJ74D4-EeiEq7jIJfFQPA" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_dVF_0D4-EeiEq7jIJfFQPA" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_gM9k0D4-EeiEq7jIJfFQPA" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_DtGR8T4-EeiEq7jIJfFQPA" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_U_19kj5pEeiEq7jIJfFQPA" name="invoker" promote="Componentinvoker2/invoker">
+    <sca:interface.wsdl xmi:id="_U_2koz5pEeiEq7jIJfFQPA" interface="http://www.example.org/wsdl/1523543225210#wsdl.interface(invoker)" scaext:wsdlLocation="../Service%20Descriptors/invoker.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_A1L7sD8lEeim0dN9VmsGvA" name="SOAPServiceBinding1" targetNamespace="http://www.tibco.com/88e0c8c004f8410e92a932302bfbca47/SOAPServiceBinding1" portTypeQName="wsdl_1523543225210:invoker" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/test_application.module/Service%20Descriptors/invoker.wsdl">
+      <bindingType xmi:id="_A1Nw4D8lEeim0dN9VmsGvA"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_G9q84D8lEeim0dN9VmsGvA" endpointURI="/SOAPServiceBinding1/invoker/" httpConnector="test_application.module.invokerInterface"/>
+      <operationConfiguration xmi:id="_A1OX8D8lEeim0dN9VmsGvA" operationName="invoke_rmbar" action="invoke_rmbar" actionNeeded="true">
+        <bindingType xmi:id="_A1OX8T8lEeim0dN9VmsGvA"/>
+        <messageConfiguration xmi:id="_A1OX8j8lEeim0dN9VmsGvA" messageQName="wsdl_1523543225210:invoke_rmbarRequest" wsdlLocation="platform:/resource/test_application.module/Service%20Descriptors/invoker.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_A1OX8z8lEeim0dN9VmsGvA" partName="parameters" partElementName="schema_1523543225253:invoke_rmbarRequest"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_A1OX9D8lEeim0dN9VmsGvA" messageQName="wsdl_1523543225210:invoke_rmbarResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/test_application.module/Service%20Descriptors/invoker.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_A1OX9T8lEeim0dN9VmsGvA" partName="parameters" partElementName="schema_1523543225253:invoke_rmbarResponse"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_A1OX9j8lEeim0dN9VmsGvA" messageQName="wsdl_1523543225210:invoke_faultMessage" messageDirection="FAULT" action="operationFault" wsdlLocation="platform:/resource/test_application.module/Service%20Descriptors/invoker.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_A1OX9z8lEeim0dN9VmsGvA" partName="parameters" partElementName="schema_1523543225253:faultMessage"/>
+        </messageConfiguration>
+        <context xmi:id="_A1OX-D8lEeim0dN9VmsGvA">
+          <inputMapping xmi:id="_A1OX-T8lEeim0dN9VmsGvA"/>
+          <outputMapping xmi:id="_A1OX-j8lEeim0dN9VmsGvA" direction="OUTPUT"/>
+          <faultMappings xmi:id="_A1O_AD8lEeim0dN9VmsGvA" direction="FAULT" faultName="operationFault"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_MWCLgEFQEeioGs7x2bfZFQ" name="JMSBinding" targetNamespace="http://www.tibco.com/8216ca9461f74d288f15e9c26a446c79/SOAPServiceBinding2" portTypeQName="wsdl_1523543225210:invoker" transportBindingType="JMS" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/test_application.module/Service%20Descriptors/invoker.wsdl">
+      <bindingType xmi:id="_MWF14EFQEeioGs7x2bfZFQ"/>
+      <inboundConfiguration xsi:type="axis2:JMSInboundTransportConfiguration" xmi:id="_R15tgEFQEeioGs7x2bfZFQ" jmsResource="test_application.module.JMSConnectionResource" messageType="Text"/>
+      <operationConfiguration xmi:id="_MWHEAEFQEeioGs7x2bfZFQ" operationName="invoke_rmbar" action="invoke_rmbar" actionNeeded="true">
+        <bindingType xmi:id="_MWHEAUFQEeioGs7x2bfZFQ"/>
+        <messageConfiguration xmi:id="_MWHEAkFQEeioGs7x2bfZFQ" messageQName="wsdl_1523543225210:invoke_rmbarRequest" wsdlLocation="platform:/resource/test_application.module/Service%20Descriptors/invoker.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_MWHEA0FQEeioGs7x2bfZFQ" partName="parameters" partElementName="schema_1523543225253:invoke_rmbarRequest"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_MWHEBEFQEeioGs7x2bfZFQ" messageQName="wsdl_1523543225210:invoke_rmbarResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/test_application.module/Service%20Descriptors/invoker.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_MWHEBUFQEeioGs7x2bfZFQ" partName="parameters" partElementName="schema_1523543225253:invoke_rmbarResponse"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_MWHEBkFQEeioGs7x2bfZFQ" messageQName="wsdl_1523543225210:invoke_faultMessage" messageDirection="FAULT" action="operationFault" wsdlLocation="platform:/resource/test_application.module/Service%20Descriptors/invoker.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_MWHEB0FQEeioGs7x2bfZFQ" partName="parameters" partElementName="schema_1523543225253:faultMessage"/>
+        </messageConfiguration>
+        <context xmi:id="_MWHECEFQEeioGs7x2bfZFQ">
+          <inputMapping xmi:id="_MWHrEEFQEeioGs7x2bfZFQ"/>
+          <outputMapping xmi:id="_MWHrEUFQEeioGs7x2bfZFQ" direction="OUTPUT"/>
+          <faultMappings xmi:id="_MWHrEkFQEeioGs7x2bfZFQ" direction="FAULT" faultName="operationFault"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_A1O_AT8lEeim0dN9VmsGvA" bindingName="SOAPServiceBinding1"/>
+    <scact:bindingAdjunct xmi:id="_MWI5MEFQEeioGs7x2bfZFQ" bindingName="JMSBinding">
+      <sca:property xmi:id="_AFZq4EFREeioGs7x2bfZFQ" name="destination" scaext:simpleValue="JmsQueueDestination"/>
+    </scact:bindingAdjunct>
+  </sca:service>
+  <sca:property xmi:id="_imU4sD1pEeiS688_lKsDdQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_imoasD1pEeiS688_lKsDdQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_imssID1pEeiS688_lKsDdQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_im0n8D1pEeiS688_lKsDdQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_inAOID1pEeiS688_lKsDdQ" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_inG70D1pEeiS688_lKsDdQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_inKmMD1pEeiS688_lKsDdQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_inSiAD1pEeiS688_lKsDdQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_inad0D1pEeiS688_lKsDdQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kE_dAD2TEeiS688_lKsDdQ" name="myHostName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_n2eKkD2TEeiS688_lKsDdQ" name="myPortNumber" type="XMLSchema:int" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Y-Db8EFQEeioGs7x2bfZFQ" name="JmsQueueDestination" type="XMLSchema:string" publicAccess="true"/>
+  <sca:component xmi:id="_iPDBID1pEeiS688_lKsDdQ" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_iPEPQD1pEeiS688_lKsDdQ" processName="test_application.module.rmBar_service"/>
+    <sca:service xmi:id="_dekRsD2KEeiS688_lKsDdQ" name="rmbar_service">
+      <sca:interface.wsdl xmi:id="_delf0D2KEeiS688_lKsDdQ" interface="http://test.project/test_rmbar/wsdl#wsdl.interface(rmbar_service)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_2BFDUD48EeiEq7jIJfFQPA" name="ComponentrmBar_RestInterface" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_2BFDUT48EeiEq7jIJfFQPA" processName="test_application.module.rmBar_RestInterface"/>
+    <sca:service xmi:id="_DsyI4D4-EeiEq7jIJfFQPA" name="getscore">
+      <sca:interface.wsdl xmi:id="_Dsyv8D4-EeiEq7jIJfFQPA" interface="http://xmlns.example.com/20180412123247PLT#wsdl.interface(getscore)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_NbzkYD5pEeiEq7jIJfFQPA" name="Componentinvoker2" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_NbzkYT5pEeiEq7jIJfFQPA" processName="test_application.module.invoker2"/>
+    <sca:service xmi:id="_U_19kD5pEeiEq7jIJfFQPA" name="invoker">
+      <sca:interface.wsdl xmi:id="_U_19kT5pEeiEq7jIJfFQPA" interface="http://www.example.org/wsdl/1523543225210#wsdl.interface(invoker)" scaext:wsdlLocation="../Service%20Descriptors/invoker.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

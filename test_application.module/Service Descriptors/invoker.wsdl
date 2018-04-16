@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:extns="http://www.example.org/schema/1523543225253" xmlns:tns="http://www.example.org/wsdl/1523543225210" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="invoker" targetNamespace="http://www.example.org/wsdl/1523543225210">
+  <wsdl:import location="../Schemas/invokerSchema.xsd" namespace="http://www.example.org/schema/1523543225253"/>
+  <wsdl:message name="invoke_rmbarRequest">
+    <wsdl:part element="extns:invoke_rmbarRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="invoke_rmbarResponse">
+    <wsdl:part element="extns:invoke_rmbarResponse" name="parameters"/>
+    </wsdl:message>
+  	<wsdl:message name="invoke_faultMessage">
+		<wsdl:part element="extns:faultMessage" name="parameters"/>
+	</wsdl:message>
+    <wsdl:portType name="invoker">
+    <wsdl:operation name="invoke_rmbar">
+      <wsdl:input message="tns:invoke_rmbarRequest" name="operationInput"/>
+      <wsdl:output message="tns:invoke_rmbarResponse" name="operationOutput"/>
+      <wsdl:fault message="tns:invoke_faultMessage" name="operationFault"/>
+    </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>
